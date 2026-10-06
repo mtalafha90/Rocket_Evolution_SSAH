@@ -1,7 +1,7 @@
 """Generate fictional launch attempts for teaching, never for operations.
 
 Run from any directory: python scripts/generate_data.py
-This script is for instructors; learners use the committed CSV.
+The notebooks use the included CSV; running this script recreates that file.
 """
 
 from pathlib import Path

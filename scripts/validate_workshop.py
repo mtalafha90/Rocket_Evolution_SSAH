@@ -163,7 +163,7 @@ def main():
                 result.get("data", {}).pop("application/vnd.jupyter.widget-view+json", None)
             if "widgets" in cell.metadata.get("tags", []):
                 cell.outputs = [nbformat.v4.new_output("stream", name="stdout", text=
-                    "Interactive controls passed execution. Rerun this cell in Codespaces to display the sliders.\n")]
+                    "Run this cell in Codespaces to display the sliders.\n")]
         nbformat.write(nb, output / path.name)
         if args.write_executed:
             nbformat.write(nb, path)
@@ -177,7 +177,7 @@ def main():
     report = json.loads((root / "artifacts/my_workshop_report.json").read_text())
     assert 0.1 <= report["threshold"] <= 0.9
     assert 0 <= report["my_scenario_probability"] <= 1
-    assert report["instructor"] == "Dr. Mohammed Hussin Talafha"
+    assert report["workshop_author"] == "Dr. Mohammed Hussin Talafha"
     assert np.isfinite(list(report["test_metrics"].values())).all()
     for filename in ["final_test_metrics.csv", "scenario_predictions.csv"]:
         assert not pd.read_csv(root / "artifacts" / filename).empty
