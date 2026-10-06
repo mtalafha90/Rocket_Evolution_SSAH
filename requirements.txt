@@ -1,0 +1,11 @@
+# Direct dependencies pinned to the versions used for workshop validation.
+# Python 3.12; CPU only. No credentials or external data API required.
+numpy==2.3.5
+pandas==2.2.3
+matplotlib==3.10.8
+scikit-learn==1.8.0
+ipykernel==6.30.1
+ipywidgets==8.1.7
+nbformat==5.10.4
+nbclient==0.10.2
+nbconvert==7.16.6
