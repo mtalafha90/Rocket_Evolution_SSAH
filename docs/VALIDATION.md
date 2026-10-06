@@ -3,6 +3,20 @@
 **Materials by Dr. Mohammed Hussin Talafha**  
 Checked 6 October 2026 for the 7 October workshop.
 
+## GitHub Jupyter execution: passed
+
+[Workflow run 37420774415](https://github.com/mtalafha90/Rocket_Evolution_SSAH/actions/runs/37420774415)
+completed successfully for commit `6ba536490d37250d4eada718526309f46676d7ce`.
+The clean GitHub runner installed the pinned dependencies and executed **both
+notebooks in independent Jupyter kernels**, including widget code, all 22 code cells,
+five figures and the student exports. This confirms normal Jupyter execution in
+addition to the local IPython checks below.
+
+The first cloud run identified that the checker must retain widget state while
+processing widget messages. This was corrected in the validation script; state is
+now stripped only after execution when saving static previews. The complete check
+then passed. No notebook cells were skipped to achieve the passing result.
+
 ## Checks completed locally
 
 - The actual `.devcontainer/post-create.sh` completed successfully in a clean Python
