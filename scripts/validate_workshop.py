@@ -140,7 +140,9 @@ def main():
         if args.engine == "jupyter":
             client = NotebookClient(nb, timeout=180, kernel_name="python3",
                                     resources={"metadata": {"path": str(cwd)}},
-                                    allow_errors=False, store_widget_state=False)
+                                    # Output widgets need state while messages are processed.
+                                    # Remove live state only after execution for static previews.
+                                    allow_errors=False, store_widget_state=True)
             client.execute()
         else:
             subprocess.run([sys.executable, str(Path(__file__).resolve()), "--execute-ipython",
